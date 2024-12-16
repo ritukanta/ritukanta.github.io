@@ -16,7 +16,7 @@
         padding: 0;
       }
       body {
-        background-color: rgb(0, 0, 33);
+        background-color: rgb(0, 0, 53);
         color: white;
         font-family: "poppins", sans-serif;
       }
@@ -35,56 +35,136 @@
         list-style: none;
         margin: 0 23px;
       }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+      nav ul li a:hover {
+        color: rgb(144, 144, 230);
+        font-size: 1.03rem;
+      }
       .left {
         font-size: 1.5rem;
       }
       .firstSection {
         display: flex;
         justify-content: space-around;
-        margin: 80px 0;
+        align-items: center;
+        margin: 140px 0;
       }
       .firstSection > div {
         width: 30%;
       }
 
       .leftSection {
-        margin: 30px 0;
         font-size: 2rem;
       }
-      .rightSection img{
-        width: 80%;
-        margin: 50px 0;
+      .rightSection img {
+        width: 60%;
+        margin: 40px 0;
       }
-      .purple{
+      .purple {
         color: blueviolet;
+      }
+      #element {
+        color: blueviolet;
+      }
+      .secondSection {
+        max-width: 80vw;
+        margin: auto;
+        height: 80vh;
+      }
+      main hr {
+        border: 0;
+        background: rgb(153, 153, 226);
+        height: 1.2px;
+        margin: 60px 84px;
+      }
+      .secondSection h1 {
+        font-size: 1.9rem;
+      }
+      .text-gray {
+        color: grey;
+      }
+      .secondSection .box {
+        background: white;
+        width: 80vw;
+        height: 2px;
+        margin: 56px 0;
+        display: flex;
+      }
+      .secondSection .vertical {
+        height: 93px;
+        width: 1px;
+        background-color: white;
+        margin: 0 100px;
+      }
+      .image-top {
+        width: 23px;
+        position: relative;
+        top: -32px;
+        left: -9px;
+      }
+      .vertical-title {
+      }
+      .vertical-desc {
       }
     </style>
   </head>
   <body>
     <header>
       <nav>
-        <div class="left">Ritukanta Reddy's Portfolio</div>
+        <div class="left">ritukant's Portfolio</div>
         <div class="right">
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Service</li>
-            <li>Projects</li>
-            <li>Contact Me</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Service</a></li>
+            <li><a href="/">Projects</a></li>
+            <li><a href="/">Contact Me</a></li>
           </ul>
         </div>
       </nav>
     </header>
     <main>
       <section class="firstSection">
-        <div class="leftSection">Hi! My Name is <span class="purple">Ritukanta Reddy</span>
-          <div>and I am a web devloper</div>
+        <div class="leftSection">
+          Oh Hi! This is <span class="purple">ritukant reddy</span>
+          <div>I'm a</div>
+          <span id="element"></span>
         </div>
         <div class="rightSection">
-          <img src="bg.png" alt="">
+          <img src="bg.png" alt="" />
         </div>
-        
+      </section>
+      <hr />
+      <section class="secondSection">
+        <span class="text-gray">What I have done so far</span>
+        <h1>Work Experience</h1>
+        <div class="box">
+          <div class="vertical">
+            <img class="image-top" src="/devloper.png" alt="" />
+            <div class="vertical-title">HTML Dev</div>
+            <div class="vertical-desc">Frontend Dev</div>
+          </div>
+          <div class="vertical"></div>
+          <div class="vertical"></div>
+          <div class="vertical"></div>
+        </div>
       </section>
     </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "Web Devloper",
+          "Linux User",
+          "Educator",
+          "Python Programmer",
+          "Video Editor",
+        ],
+        typeSpeed: 50,
+      });
+    </script>
   </body>
 </html>
