@@ -1,199 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
+      body {
+        background-color: rgb(0, 0, 53);
+        color: white;
+        font-family: "poppins", sans-serif;
+      }
 
-    body {
-      background-color: rgb(0, 0, 53);
-      color: white;
-      font-family: "poppins", sans-serif;
-    }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 65px;
+        background-color: rgb(5, 5, 51);
+      }
 
-    nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      height: 65px;
-      background-color: rgb(5, 5, 51);
-    }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-    }
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
+      }
 
-    nav ul li {
-      list-style: none;
-      margin: 0 23px;
-    }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
 
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-    }
+      nav ul li a:hover {
+        color: rgb(144, 144, 230);
+        font-size: 1.03rem;
+      }
 
-    nav ul li a:hover {
-      color: rgb(144, 144, 230);
-      font-size: 1.03rem;
-    }
+      .left {
+        font-size: 1.5rem;
+      }
 
-    .left {
-      font-size: 1.5rem;
-    }
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 140px 0;
+      }
 
-    .firstSection {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 140px 0;
-    }
+      .firstSection > div {
+        width: 30%;
+      }
 
-    .firstSection>div {
-      width: 30%;
-    }
+      .leftSection {
+        font-size: 2rem;
+      }
 
-    .leftSection {
-      font-size: 2rem;
-    }
+      .rightSection img {
+        width: 60%;
+        margin: 40px 0;
+      }
 
-    .rightSection img {
-      width: 60%;
-      margin: 40px 0;
-    }
+      .purple {
+        color: blueviolet;
+      }
 
-    .purple {
-      color: blueviolet;
-    }
+      #element {
+        color: blueviolet;
+      }
 
-    #element {
-      color: blueviolet;
-    }
+      .skills- {
+        margin-top: 100px;
+      }
 
-    .skills- {
-      margin-top: 100px;
-    }
+      .skills-list {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
 
-    .skills-list {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+      .skills-list span {
+        background: #333;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+      }
 
-    .skills-list span {
-      background: #333;
-      color: #fff;
-      padding: 10px;
-      border-radius: 5px;
-    }
+      .Contact {
+        margin-top: 100px;
+      }
+      /* For small screens like phones */
+      @media (max-width: 600px) {
+        body {
+          font-size: 14px;
+        }
+        .container {
+          flex-direction: column;
+        }
+      }
 
-    .Contact {
-      margin-top: 100px;
-    }
-  </style>
-</head>
+      /* For tablets */
+      @media (min-width: 601px) and (max-width: 1024px) {
+        body {
+          font-size: 16px;
+        }
+        .container {
+          flex-direction: row;
+        }
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+      }
+      .container {
+        width: 100%; /* Full width of the screen */
+        padding: 10%;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      body {
+        font-size: 1rem; /* Scales with the root font size */
+      }
+    </style>
+  </head>
 
-<body>
-  <header>
-    <nav>
-      <div class="left">Ritukant Reddy's Portfolio</div>
-      <div class="right">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact Me</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section class="firstSection">
-      <div class="leftSection">
-        Oh Hi! This is <span class="purple">Ritukant Reddy</span>
-        <div>I'm a-</div>
-        <span id="element"></span>
-      </div>
-      <div class="rightSection">
-        <img src="bg.png" alt="" />
+  <body>
+    <header>
+      <nav>
+        <div class="left">Ritukant Reddy's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="firstSection">
+        <div class="leftSection">
+          Oh Hi! This is <span class="purple">Ritukant Reddy</span>
+          <div>I'm a-</div>
+          <span id="element"></span>
+        </div>
+        <div class="rightSection">
+          <img src="bg.png" alt="" />
+        </div>
+      </section>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>I don't know about myself, kys.</p>
+      </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "Educator",
+          "Linux User",
+          "Web Designer",
+          "Python Programmer",
+          "Video Editor",
+        ],
+        typeSpeed: 60,
+      });
+    </script>
+    <section id="skills">
+      <h2 class="skills-">Skills</h2>
+      <div class="skills-list">
+        <span>Python</span>
+        <span>Git and Github</span>
+        <span>Markdown</span>
+        <span>HTML</span>
+        <span>CSS</span>
       </div>
     </section>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        (random para, i know)Finding the truth wouldn't be easy, that's for
-        sure. Then there was the question of whether or not Jane really wanted
-        to know the truth. That's the thing that bothered her most. It wasn't
-        the difficulty of actually finding out what happened that was the
-        obstacle, but having to live with that information once it was found.
-        Indescribable oppression, which seemed to generate in some unfamiliar
-        part of her consciousness, filled her whole being with a vague
-        anguish. It was like a shadow, like a mist passing across her soul's
-        summer day. It was strange and unfamiliar; it was a mood. She did not
-        sit there inwardly upbraiding her husband, lamenting at Fate, which
-        had directed her footsteps to the path which they had taken. She was
-        just having a good cry all to herself. The mosquitoes made merry over
-        her, biting her firm, round arms and nipping at her bare insteps. She
-        didn't understand how changed worked. When she looked at today
-        compared to yesterday, there was nothing that she could see that was
-        different. Yet, when she looked at today compared to last year, she
-        couldn't see how anything was ever the same.
-      </p>
+
+    <section id="contact">
+      <h2 class="Contact">Contact Me</h2>
+      <p>Feel Free to Reach Out to Me via Email, LinkedIn or Github:</p>
+      <ul>
+        <li><a href="mailto:reddyritukanta1925@gmail.com">Email Me</a></li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/ritukanta-reddy-99a6181a0/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/ritukanta" target="_blank"
+            >View on GitHub</a
+          >
+        </li>
+      </ul>
     </section>
-  </main>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script>
-    var typed = new Typed("#element", {
-      strings: [
-        "Educator",
-        "Linux User",
-        "Web Designer",
-        "Python Programmer",
-        "Video Editor",
-      ],
-      typeSpeed: 60,
-    });
-  </script>
-  <section id="skills">
-    <h2 class="skills-">Skills</h2>
-    <div class="skills-list">
-      <span>Python</span>
-      <span>Git and Github</span>
-      <span>Markdown</span>
-      <span>HTML</span>
-      <span>CSS</span>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="Contact">Contact Me</h2>
-    <p>Feel Free to Reach Out to Me via Email, LinkedIn or Github:</p>
-    <ul>
-      <li><a href="mailto:reddyritukanta1925@gmail.com">Email Me</a></li>
-      <li>
-        <a href="https://www.linkedin.com/in/ritukanta-reddy-99a6181a0/" target="_blank">LinkedIn</a>
-      </li>
-      <li>
-        <a href="https://github.com/ritukanta" target="_blank">View on GitHub</a>
-      </li>
-    </ul>
-  </section>
-  <footer>
-    <p>© 2024 Ritukanta Reddy. All rights reserved.</p>
-  </footer>
-</body>
-
+    <footer>
+      <p>© 2024 Ritukanta Reddy. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
