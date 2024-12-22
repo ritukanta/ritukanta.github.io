@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +15,6 @@
         margin: 0;
         padding: 0;
       }
-
       body {
         background-color: rgb(0, 0, 53);
         color: white;
@@ -99,44 +98,37 @@
         padding: 10px;
         border-radius: 5px;
       }
-
       .Contact {
         margin-top: 100px;
       }
-      /* For small screens like phones */
-      @media (max-width: 600px) {
-        body {
-          font-size: 14px;
-        }
-        .container {
-          flex-direction: column;
-        }
-      }
-
-      /* For tablets */
-      @media (min-width: 601px) and (max-width: 1024px) {
+      /* Example media query */
+      @media (max-width: 768px) {
         body {
           font-size: 16px;
         }
         .container {
-          flex-direction: row;
+          padding: 10px;
+          flex-direction: column;
         }
       }
       .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
+        display: flex;
+        flex-wrap: wrap; /* Ensures content wraps on smaller screens */
       }
-      .container {
-        width: 100%; /* Full width of the screen */
-        padding: 10%;
+      .img-responsive {
+        width: 100%; /* Scales the image to fit its container */
+        height: auto;
       }
       img {
         max-width: 100%;
         height: auto;
       }
-      body {
-        font-size: 1rem; /* Scales with the root font size */
+      button {
+        padding: 10px 20px;
+      }
+      div {
+        width: 80%;
+        max-width: 600px; /* Sets an upper limit for width */
       }
     </style>
   </head>
