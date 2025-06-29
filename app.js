@@ -21,15 +21,15 @@ const cardData = [
   },
   {
     title: "Skills",
-    content: "<ul class='list-disc list-inside space-y-1 text-gray-300'><li>Python for AI/ML</li><li>React, Tailwind, Next.js</li><li>Linux & Custom ROMs</li><li>Git, Firebase, REST APIs</li></ul>"
+    content: "<ul class='list-disc list-inside space-y-1 text-gray-300'><li>Mathematics</><li>Python for AI/ML</li><li>React, Tailwind, Next.js</li><li>Linux & Custom ROMs</li><li>Git, Firebase, REST APIs</li></ul>"
   },
   {
     title: "Projects",
-    content: "• Android ROM Builds<br/>• Portfolio Website<br/>• SSC Prep Tracker (in-progress)<br/>• ML Model Deployment (past work)"
+    content: "• Android ROM Builds<br/>• Portfolio Website<br/>• ML Model Deployment (past work)"
   },
   {
     title: "Contact",
-    content: "Drop a message if you want to collaborate, or just talk tech, Batman, or heartbreak recoveries."
+    content: "Drop a message if you want to collaborate, or just talk tech, Batman."
   }
 ];
 

@@ -9,18 +9,31 @@
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <script src="app.js" defer></script>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    html,
+    body {
+      height: auto;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    #tsparticles canvas {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+    }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white p-6 relative overflow-hidden">
-  <div id="tsparticles" class="absolute inset-0 z-0"></div>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white p-6 relative overflow-x-hidden">
+  <div id="tsparticles" class="absolute inset-0 z-0 pointer-events-none"></div>
   <div class="max-w-4xl mx-auto text-center mt-10 relative z-10">
     <h1 class="text-4xl md:text-6xl font-bold mb-4">Ritukanta Reddy</h1>
-    <p class="text-xl text-gray-400">Developer. Dreamer. Dark Knight.</p>
+    <p class="text-xl text-gray-400">Developer . Dreamer . Dark Knight.</p>
     <div class="flex justify-center gap-4 mt-6">
       <a href="mailto:reddyritukanta37@gmail.com" class="custom-btn" target="_blank">Email</a>
       <a href="https://github.com/ritukanta" class="custom-btn" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/ritukanta-reddy-99a6181a0/" class="custom-btn" target="_blank">LinkedIn</a>
-
     </div>
   </div>
 
