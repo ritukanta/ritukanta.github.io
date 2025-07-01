@@ -21,7 +21,7 @@ const cardData = [
   },
   {
     title: "Skills",
-    content: "<ul class='list-disc list-inside space-y-1 text-gray-300'><li>Mathematics</><li>Python for AI/ML</li><li>React, Tailwind, Next.js</li><li>Linux & Custom ROMs</li><li>Git, Firebase, REST APIs</li></ul>"
+    content: "<ul class='list-disc list-inside space-y-1 text-gray-300'><li>Mathematics</li><li>Python for AI/ML</li><li>React, Tailwind, Next.js</li><li>Linux & Custom ROMs</li><li>Git, Firebase, REST APIs</li></ul>"
   },
   {
     title: "Projects",
@@ -40,17 +40,15 @@ cardData.forEach(({ title, content }) => {
   card.innerHTML = `<h2 class='text-2xl font-semibold mb-2'>${title}</h2><p>${content}</p>`;
   cardsContainer.appendChild(card);
 });
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("https://api.countapi.xyz/hit/ritukanta-portfolio/visits")
-    .then((res) => res.json())
-    .then((data) => {
-      const visitText = `Visits: ${data.value}`;
-      const visitDiv = document.createElement("div");
-      visitDiv.textContent = visitText;
-      visitDiv.className = "text-center text-gray-500 text-xs mt-4";
-      document.querySelector("footer").appendChild(visitDiv);
-    })
-    .catch((err) => {
-      console.error("Visitor counter error:", err);
-    });
-});
+
+fetch("https://api.countapi.xyz/hit/ritukanta.github.io/visits")
+  .then((res) => res.json())
+  .then((data) => {
+    const counter = document.getElementById("visitor-counter");
+    counter.textContent = `👁️ Visits: ${data.value}`;
+  })
+  .catch((err) => {
+    console.error("Visitor counter failed:", err);
+    const counter = document.getElementById("visitor-counter");
+    counter.textContent = "👁️ Visitors: N/A";
+  });
