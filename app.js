@@ -1,6 +1,7 @@
-
+// Set the footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Load particles background
 tsParticles.load("tsparticles", {
   fullScreen: { enable: true, zIndex: -1 },
   background: { color: { value: "#000" } },
@@ -14,6 +15,7 @@ tsParticles.load("tsparticles", {
   }
 });
 
+// Card data
 const cardData = [
   {
     title: "About Me",
@@ -33,6 +35,7 @@ const cardData = [
   }
 ];
 
+// Render cards
 const cardsContainer = document.getElementById('cards');
 cardData.forEach(({ title, content }) => {
   const card = document.createElement('div');
@@ -40,15 +43,3 @@ cardData.forEach(({ title, content }) => {
   card.innerHTML = `<h2 class='text-2xl font-semibold mb-2'>${title}</h2><p>${content}</p>`;
   cardsContainer.appendChild(card);
 });
-
-fetch("https://api.countapi.xyz/hit/ritukanta.github.io/visits")
-  .then((res) => res.json())
-  .then((data) => {
-    const counter = document.getElementById("visitor-counter");
-    counter.textContent = `👁️ Visits: ${data.value}`;
-  })
-  .catch((err) => {
-    console.error("Visitor counter failed:", err);
-    const counter = document.getElementById("visitor-counter");
-    counter.textContent = "👁️ Visitors: N/A";
-  });
