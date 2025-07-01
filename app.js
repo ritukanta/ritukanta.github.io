@@ -40,12 +40,14 @@ cardData.forEach(({ title, content }) => {
   card.innerHTML = `<h2 class='text-2xl font-semibold mb-2'>${title}</h2><p>${content}</p>`;
   cardsContainer.appendChild(card);
 });
-fetch("https://api.countapi.xyz/hit/ritukanta-portfolio/visits")
-  .then((res) => res.json())
-  .then((data) => {
-    const visitText = `Visits: ${data.value}`;
-    const visitDiv = document.createElement("div");
-    visitDiv.textContent = visitText;
-    visitDiv.className = "text-center text-gray-500 text-xs mt-4";
-    document.querySelector("footer").appendChild(visitDiv);
-  });
+window.onload = () => {
+  fetch("https://api.countapi.xyz/hit/ritukanta-portfolio/visits")
+    .then((res) => res.json())
+    .then((data) => {
+      const visitText = `Visits: ${data.value}`;
+      const visitDiv = document.createElement("div");
+      visitDiv.textContent = visitText;
+      visitDiv.className = "text-center text-gray-500 text-xs mt-4";
+      document.querySelector("footer").appendChild(visitDiv);
+    });
+};
