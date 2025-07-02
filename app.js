@@ -19,15 +19,22 @@ tsParticles.load("tsparticles", {
 const cardData = [
   {
     title: "About Me",
-    content: "I build elegant and minimal interfaces with strong backend logic. Passionate about Linux, systems, and powerful web experiences."
+    content: `
+    <details>
+      <summary class='cursor-pointer text-gray-300 hover:text-gray-100'>Tap to reveal</summary>
+      <p class='mt-2'>
+        I am Batman!
+      </p>
+    </details>
+  `
   },
   {
     title: "Skills",
-    content: "<ul class='list-disc list-inside space-y-1 text-gray-300'><li>Mathematics</li><li>Python for AI/ML</li><li>React, Tailwind, Next.js</li><li>Linux & Custom ROMs</li><li>Git, Firebase, REST APIs</li></ul>"
+    content: "<ul class='list-disc list-inside space-y-1 text-gray-300'><li>Mathematics</li><li>LaTeX<li>Python for AI/ML</li><li>HTML, CSS, JS, Next.js</li><li>Linux Distros & AOSP ROMs</li><li>Git and GitHub</li></ul>"
   },
   {
     title: "Projects",
-    content: "• Android ROM Builds<br/>• Portfolio Website<br/>• ML Model Deployment (past work)"
+    content: "• Android ROM Builds<br/>• A Few Projects on Mathematics<br/>• ML Model Deployment (past work)"
   },
   {
     title: "Contact",
