@@ -1,657 +1,472 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ritukanta Reddy | Digital Architect</title>
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><linearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 stop-color=%22%232563eb%22/><stop offset=%22100%25%22 stop-color=%22%2306b6d4%22/></linearGradient><rect width=%22100%22 height=%22100%22 rx=%2230%22 fill=%22url(%23g)%22/><text x=%2250%22 y=%2250%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-weight=%22900%22 font-size=%2260%22 fill=%22white%22>R</text></svg>"
-    />
+    
+    <!-- Minimal Favicon Logo -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><linearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22><stop offset=%220%25%22 stop-color=%22%232563eb%22/><stop offset=%22100%25%22 stop-color=%22%2306b6d4%22/></linearGradient><rect width=%22100%22 height=%22100%22 rx=%2230%22 fill=%22url(%23g)%22/><text x=%2250%22 y=%2250%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-weight=%22900%22 font-size=%2260%22 fill=%22white%22>R</text></svg>">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              pitch: "#000000",
-              "gemini-start": "#2563eb" /* Blue-600 */,
-              "gemini-end": "#06b6d4" /* Cyan-500 */,
-            },
-            animation: {
-              "gradient-x": "gradient-x 15s ease infinite",
-              "blob-move-1": "blobMove1 25s infinite alternate ease-in-out",
-              "blob-move-2": "blobMove2 20s infinite alternate ease-in-out",
-              "blob-pulse": "blobPulse 5s infinite ease-in-out",
-            },
-            keyframes: {
-              "gradient-x": {
-                "0%, 100%": {
-                  "background-size": "200% 200%",
-                  "background-position": "left center",
-                },
-                "50%": {
-                  "background-size": "200% 200%",
-                  "background-position": "right center",
-                },
-              },
-              blobMove1: {
-                "0%, 100%": { transform: "translate(0, 0) scale(1)" },
-                "30%": { transform: "translate(-50px, 30px) scale(1.1)" },
-                "60%": { transform: "translate(20px, -40px) scale(0.9)" },
-              },
-              blobMove2: {
-                "0%, 100%": { transform: "translate(0, 0) scale(1)" },
-                "40%": { transform: "translate(60px, -20px) scale(1.2)" },
-                "70%": { transform: "translate(-30px, 50px) scale(0.8)" },
-              },
-              blobPulse: {
-                "0%, 100%": { opacity: "0.1", filter: "blur(30px)" },
-                "50%": { opacity: "0.2", filter: "blur(40px)" },
-              },
-            },
-          },
-        },
-      };
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        pitch: '#000000',
+                        'gemini-start': '#2563eb', /* Blue-600 */
+                        'gemini-end': '#06b6d4',   /* Cyan-500 */
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'blob-move-1': 'blobMove1 25s infinite alternate ease-in-out',
+                        'blob-move-2': 'blobMove2 20s infinite alternate ease-in-out',
+                        'blob-pulse': 'blobPulse 5s infinite ease-in-out',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        blobMove1: {
+                            '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                            '30%': { transform: 'translate(-50px, 30px) scale(1.1)' },
+                            '60%': { transform: 'translate(20px, -40px) scale(0.9)' },
+                        },
+                        blobMove2: {
+                            '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                            '40%': { transform: 'translate(60px, -20px) scale(1.2)' },
+                            '70%': { transform: 'translate(-30px, 50px) scale(0.8)' },
+                        },
+                        blobPulse: {
+                            '0%, 100%': { opacity: '0.1', filter: 'blur(30px)' },
+                            '50%': { opacity: '0.2', filter: 'blur(40px)' },
+                        },
+                    }
+                }
+            }
+        }
     </script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .mono-font {
-        font-family: "JetBrains Mono", monospace;
-      }
-      /* Custom scrollbar for a premium feel */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 4px;
-      }
-      .dark ::-webkit-scrollbar-thumb {
-        background: #334155;
-      }
+        body { font-family: 'Inter', sans-serif; }
+        .mono-font { font-family: 'JetBrains Mono', monospace; }
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #334155; }
 
-      /* Utilitarian classes for the gradient text */
-      .gradient-text {
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: linear-gradient(to right, var(--tw-gradient-stops));
-      }
+        /* Utilitarian classes for the gradient text */
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        }
 
-      /* Base classes for animation */
-      .opacity-0 {
-        opacity: 0;
-      }
-      .translate-y-8 {
-        transform: translateY(2rem);
-      }
-      .transition-all-custom {
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
+        /* Base classes for animation */
+        .opacity-0 { opacity: 0; }
+        .translate-y-8 { transform: translateY(2rem); }
+        .transition-all-custom { transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
-      /* Premium Glow Effects */
-      .dark .hero-glow {
-        filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.4));
-      }
-      .dark .text-glow-subtle {
-        text-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
-      }
-      .dark .card-glow {
-        box-shadow: 0 0 20px -5px rgba(37, 99, 235, 0.1); /* Subtle ambient glow */
-      }
-      .dark .card-glow:hover {
-        box-shadow: 0 0 40px -5px rgba(6, 182, 212, 0.3); /* Intensified on hover */
-      }
-      /* Ambient Blobs */
-      .ambient-blob {
-        position: absolute;
-        z-index: -20; /* Below content, above main background */
-        background: linear-gradient(to right, #2563eb, #06b6d4);
-        border-radius: 50%;
-        opacity: 0.1;
-        filter: blur(60px);
-        mix-blend-mode: multiply;
-        transition: all 1s ease-in-out;
-        pointer-events: none; /* Ensure they don't interfere with clicks */
-      }
-      .dark .ambient-blob {
-        mix-blend-mode: screen; /* Lighten effect in dark mode */
-        opacity: 0.08;
-        filter: blur(80px);
-      }
+        /* Premium Glow Effects */
+        .dark .hero-glow {
+            filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.4));
+        }
+        .dark .text-glow-subtle {
+            text-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+        }
+        .dark .card-glow {
+            box-shadow: 0 0 20px -5px rgba(37, 99, 235, 0.1); /* Subtle ambient glow */
+        }
+        .dark .card-glow:hover {
+            box-shadow: 0 0 40px -5px rgba(6, 182, 212, 0.3); /* Intensified on hover */
+        }
+        /* Ambient Blobs */
+        .ambient-blob {
+            position: absolute;
+            z-index: -20; /* Below content, above main background */
+            background: linear-gradient(to right, #2563eb, #06b6d4);
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(60px);
+            mix-blend-mode: multiply;
+            transition: all 1s ease-in-out;
+            pointer-events: none; /* Ensure they don't interfere with clicks */
+        }
+        .dark .ambient-blob {
+            mix-blend-mode: screen; /* Lighten effect in dark mode */
+            opacity: 0.08;
+            filter: blur(80px);
+        }
+        /* Typing indicator dots */
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
     </style>
-  </head>
-  <body
-    class="bg-slate-50 text-slate-900 dark:bg-pitch dark:text-slate-100 transition-colors duration-500 ease-in-out min-h-screen flex flex-col relative overflow-x-hidden"
-  >
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-pitch dark:text-slate-100 transition-colors duration-500 ease-in-out min-h-screen flex flex-col relative overflow-x-hidden">
+
     <!-- Ambient Background Flashes -->
-    <div
-      class="ambient-blob w-[30rem] h-[30rem] top-[-5rem] left-[-5rem] animate-blob-move-1"
-    ></div>
-    <div
-      class="ambient-blob w-[25rem] h-[25rem] bottom-[10%] right-[-5%] animate-blob-move-2"
-      style="animation-delay: -5s"
-    ></div>
-    <div
-      class="ambient-blob w-[20rem] h-[20rem] top-[40%] left-[20%] animate-blob-move-1"
-      style="animation-delay: -12s"
-    ></div>
+    <div class="ambient-blob w-[30rem] h-[30rem] top-[-5rem] left-[-5rem] animate-blob-move-1"></div>
+    <div class="ambient-blob w-[25rem] h-[25rem] bottom-[10%] right-[-5%] animate-blob-move-2" style="animation-delay: -5s;"></div>
+    <div class="ambient-blob w-[20rem] h-[20rem] top-[40%] left-[20%] animate-blob-move-1" style="animation-delay: -12s;"></div>
 
     <!-- Navigation -->
-    <nav
-      class="fixed w-full z-50 backdrop-blur-md bg-white/70 dark:bg-pitch/70 border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-500"
-    >
-      <div
-        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <!-- Minimal Logo -->
-        <a href="#hero" class="text-2xl font-bold tracking-tighter group">
-          R<span
-            class="text-blue-600 dark:text-blue-400 group-hover:text-cyan-500 transition-colors duration-300"
-            >.</span
-          >Reddy
-        </a>
+    <nav class="fixed w-full z-50 backdrop-blur-md bg-white/70 dark:bg-pitch/70 border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-500">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Minimal Logo -->
+            <a href="#hero" class="text-2xl font-bold tracking-tighter group">
+                R<span class="text-blue-600 dark:text-blue-400 group-hover:text-cyan-500 transition-colors duration-300">.</span>Reddy
+            </a>
 
-        <div class="flex items-center gap-6">
-          <ul
-            class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400"
-          >
-            <li>
-              <a
-                href="#about"
-                class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="#expertise"
-                class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >Expertise</a
-              >
-            </li>
-            <li>
-              <a
-                href="#connect"
-                class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >Connect</a
-              >
-            </li>
-          </ul>
-          <!-- Theme Toggle Button -->
-          <button
-            id="theme-toggle"
-            aria-label="Toggle Dark Mode"
-            class="p-2 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:ring-2 ring-blue-500 transition-all duration-300 focus:outline-none"
-          >
-            <!-- Sun Icon -->
-            <svg
-              id="sun-icon"
-              class="w-5 h-5 hidden dark:block"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-              ></path>
-            </svg>
-            <!-- Moon Icon -->
-            <svg
-              id="moon-icon"
-              class="w-5 h-5 block dark:hidden"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-              ></path>
-            </svg>
-          </button>
+            <div class="flex items-center gap-6">
+                <ul class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                    <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a></li>
+                    <li><a href="#expertise" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Expertise</a></li>
+                    <li><a href="#neural-interface" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">AI</a></li>
+                    <li><a href="#connect" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Connect</a></li>
+                </ul>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:ring-2 ring-blue-500 transition-all duration-300 focus:outline-none">
+                    <!-- Sun Icon -->
+                    <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <!-- Moon Icon -->
+                    <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Main Content -->
     <main class="flex-grow relative z-10">
-      <!-- Hero Section -->
-      <section id="hero" class="min-h-screen flex items-center pt-20 relative">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="space-y-6 max-w-3xl">
-            <p
-              class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-100 mono-font text-blue-600 dark:text-blue-400 tracking-wider text-sm uppercase"
-            >
-              > Hello world, I am
-            </p>
-            <h1
-              class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-200 text-5xl md:text-7xl font-extrabold tracking-tight leading-tight hero-glow transition-all duration-500"
-            >
-              Ritukanta
-              <span
-                class="gradient-text from-gemini-start to-gemini-end bg-gradient-to-r animate-gradient-x"
-                >Reddy.</span
-              >
-            </h1>
-            <h2
-              class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-300 text-3xl md:text-4xl font-semibold text-slate-600 dark:text-slate-400"
-            >
-              Mathematical precision meets digital innovation.
-            </h2>
-            <p
-              class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-500 text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed"
-            >
-              I architect robust web solutions and leverage AI to solve complex
-              problems. Quietly focused on building efficient, elegant, and
-              scalable systems.
-            </p>
-            <div
-              class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-700 pt-8 flex gap-4"
-            >
-              <a
-                href="#connect"
-                class="px-8 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 active:scale-95"
-              >
-                Get in touch
-              </a>
-              <a
-                href="#expertise"
-                class="px-8 py-3 rounded-full border-2 border-slate-300 dark:border-slate-700 font-semibold hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300"
-              >
-                View Expertise
-              </a>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center pt-20 relative">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="space-y-6 max-w-3xl">
+                    <p class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-100 mono-font text-blue-600 dark:text-blue-400 tracking-wider text-sm uppercase">
+                        > Hello world, I am
+                    </p>
+                    <h1 class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-200 text-5xl md:text-7xl font-extrabold tracking-tight leading-tight hero-glow transition-all duration-500">
+                        Ritukanta
+                        <span class="gradient-text from-gemini-start to-gemini-end bg-gradient-to-r animate-gradient-x">Reddy.</span>
+                    </h1>
+                    <h2 class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-300 text-3xl md:text-4xl font-semibold text-slate-600 dark:text-slate-400">
+                        Mathematical precision meets digital innovation.
+                    </h2>
+                    <p class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-500 text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                        I architect robust web solutions and leverage AI to solve complex problems. Quietly focused on building efficient, elegant, and scalable systems.
+                    </p>
+                    <div class="animate-on-load opacity-0 translate-y-8 transition-all-custom delay-700 pt-8 flex gap-4">
+                        <a href="#connect" class="px-8 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 active:scale-95">
+                            Get in touch
+                        </a>
+                        <a href="#expertise" class="px-8 py-3 rounded-full border-2 border-slate-300 dark:border-slate-700 font-semibold hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300">
+                            View Expertise
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- About Section -->
-      <section
-        id="about"
-        class="py-24 bg-slate-100/50 dark:bg-neutral-950/50 backdrop-blur-sm transition-colors duration-500"
-      >
-        <div
-          class="max-w-4xl mx-auto px-6 animate-on-scroll opacity-0 translate-y-8 transition-all-custom"
-        >
-          <h3
-            class="text-sm mono-font uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4"
-          >
-            // About Me
-          </h3>
-          <h2
-            class="text-3xl font-bold mb-8 text-glow-subtle transition-all duration-500"
-          >
-            The Quiet Architect
-          </h2>
-          <div class="prose dark:prose-invert md:prose-lg">
-            <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-              I am an independent contributor who prefers deep, focused work
-              over broad noise. My approach to technology is grounded in
-              rigorous logic, stemming from my academic background in
-              Mathematics.
-            </p>
-            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-              Holding a
-              <strong class="text-slate-900 dark:text-white"
-                >B.Sc. in Mathematics from Berhampur University</strong
-              >, I view coding not just as language, but as structured
-              problem-solving. Whether it's crafting pixel-perfect frontend
-              interfaces or developing Python-based ML models, I aim for
-              clarity, efficiency, and elegance in every line of code.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Expertise Section -->
-      <section id="expertise" class="py-24 transition-colors duration-500">
-        <div class="max-w-6xl mx-auto px-6">
-          <div
-            class="mb-16 animate-on-scroll opacity-0 translate-y-8 transition-all-custom"
-          >
-            <h3
-              class="text-sm mono-font uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4"
-            >
-              // Expertise
-            </h3>
-            <h2
-              class="text-3xl font-bold text-glow-subtle transition-all duration-500"
-            >
-              Technical Arsenal
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Skill Card 1 -->
-            <div
-              class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-100 group p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-slate-200 dark:border-neutral-800 card-glow transition-all duration-500 hover:-translate-y-2"
-            >
-              <div
-                class="w-12 h-12 mb-6 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
-              </div>
-              <h4 class="text-xl font-bold mb-3">Web Architecture</h4>
-              <p
-                class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
-              >
-                Full-stack capabilities with a focus on modern standards using
-                HTML5, advanced CSS, and JavaScript ES6+.
-              </p>
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-slate-100/50 dark:bg-neutral-950/50 backdrop-blur-sm transition-colors duration-500">
+            <div class="max-w-4xl mx-auto px-6 animate-on-scroll opacity-0 translate-y-8 transition-all-custom">
+               <h3 class="text-sm mono-font uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4">// About Me</h3>
+               <h2 class="text-3xl font-bold mb-8 text-glow-subtle transition-all duration-500">The Quiet Architect</h2>
+               <div class="prose dark:prose-invert md:prose-lg">
+                   <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                       I am an independent contributor who prefers deep, focused work over broad noise. My approach to technology is grounded in rigorous logic, stemming from my academic background in Mathematics.
+                   </p>
+                   <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                       Holding a <strong class="text-slate-900 dark:text-white">B.Sc. in Mathematics from Berhampur University</strong>, I view coding not just as language, but as structured problem-solving. Whether it's crafting pixel-perfect frontend interfaces or developing Python-based ML models, I aim for clarity, efficiency, and elegance in every line of code.
+                   </p>
+               </div>
             </div>
+        </section>
 
-            <!-- Skill Card 2 -->
-            <div
-              class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-200 group p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-slate-200 dark:border-neutral-800 card-glow transition-all duration-500 hover:-translate-y-2"
-            >
-              <div
-                class="w-12 h-12 mb-6 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  />
-                </svg>
-              </div>
-              <h4 class="text-xl font-bold mb-3">AI & ML</h4>
-              <p
-                class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
-              >
-                Leveraging Python for data-driven intelligence, machine learning
-                models, and algorithmic problem solving.
-              </p>
+        <!-- Expertise Section -->
+        <section id="expertise" class="py-24 transition-colors duration-500">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="mb-16 animate-on-scroll opacity-0 translate-y-8 transition-all-custom">
+                    <h3 class="text-sm mono-font uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4">// Expertise</h3>
+                    <h2 class="text-3xl font-bold text-glow-subtle transition-all duration-500">Technical Arsenal</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Skill Card 1 -->
+                    <div class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-100 group p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-slate-200 dark:border-neutral-800 card-glow transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-12 h-12 mb-6 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Web Architecture</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Full-stack capabilities with a focus on modern standards using HTML5, advanced CSS, and JavaScript ES6+.
+                        </p>
+                    </div>
+
+                    <!-- Skill Card 2 -->
+                    <div class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-200 group p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-slate-200 dark:border-neutral-800 card-glow transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-12 h-12 mb-6 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">AI & ML</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Leveraging Python for data-driven intelligence, machine learning models, and algorithmic problem solving.
+                        </p>
+                    </div>
+
+                    <!-- Skill Card 3 -->
+                    <div class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-300 group p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-slate-200 dark:border-neutral-800 card-glow transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-12 h-12 mb-6 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                            <span class="font-serif text-2xl italic">∫x</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Math Typesetting</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Professional documentation and complex mathematical notation using LaTeX.
+                        </p>
+                    </div>
+
+                     <!-- Skill Card 4 -->
+                     <div class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-500 group p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-slate-200 dark:border-neutral-800 card-glow transition-all duration-500 hover:-translate-y-2">
+                        <div class="w-12 h-12 mb-6 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Dev Environment</h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Proficient in Linux ecosystems, Git version control, and GitHub collaboration workflows.
+                        </p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Skill Card 3 -->
-            <div
-              class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-300 group p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-slate-200 dark:border-neutral-800 card-glow transition-all duration-500 hover:-translate-y-2"
-            >
-              <div
-                class="w-12 h-12 mb-6 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform"
-              >
-                <span class="font-serif text-2xl italic">∫x</span>
-              </div>
-              <h4 class="text-xl font-bold mb-3">Math Typesetting</h4>
-              <p
-                class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
-              >
-                Professional documentation and complex mathematical notation
-                using LaTeX.
-              </p>
+        <!-- NEW SECTION: Neural Interface (AI Gemini) -->
+        <section id="neural-interface" class="py-24 bg-slate-100/50 dark:bg-neutral-950/50 backdrop-blur-sm transition-colors duration-500">
+             <div class="max-w-4xl mx-auto px-6 animate-on-scroll opacity-0 translate-y-8 transition-all-custom">
+                <h3 class="text-sm mono-font uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4">// Neural Interface</h3>
+                <h2 class="text-3xl font-bold mb-8 text-glow-subtle transition-all duration-500">Ask the Digital Twin</h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-2xl">
+                    Interact with my AI persona. It is trained on my professional background and skills to answer your questions while I am engaged in deep work.
+                </p>
+
+                <!-- AI Interaction Terminal -->
+                <div class="bg-white dark:bg-neutral-900 rounded-2xl shadow-lg border border-slate-200 dark:border-neutral-800 overflow-hidden card-glow transition-all duration-500">
+                    <div class="p-4 bg-slate-100 dark:bg-neutral-950 border-b border-slate-200 dark:border-neutral-800 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        <span class="ml-2 text-xs mono-font text-slate-400">ritukanta_ai_v1.0</span>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <!-- Output Area -->
+                        <div id="ai-output" class="min-h-[100px] text-slate-700 dark:text-slate-300 mono-font text-sm leading-relaxed whitespace-pre-wrap">
+                            > System online. Ready for queries regarding Ritukanta Reddy's professional profile.
+                        </div>
+
+                         <!-- Loading Indicator (Hidden by default) -->
+                         <div id="ai-loading" class="hidden flex items-center gap-2 mono-font text-sm text-blue-500">
+                            > Processing <span class="flex gap-1"><span class="typing-dot w-1.5 h-1.5 bg-blue-500 rounded-full"></span><span class="typing-dot w-1.5 h-1.5 bg-blue-500 rounded-full"></span><span class="typing-dot w-1.5 h-1.5 bg-blue-500 rounded-full"></span></span>
+                        </div>
+
+                        <!-- Input Area -->
+                        <div class="flex gap-4">
+                            <input type="text" id="ai-input" placeholder="e.g., What is your experience with Python?" 
+                                class="flex-grow px-4 py-3 rounded-xl bg-slate-50 dark:bg-neutral-800 border border-slate-200 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 dark:text-white outline-none transition-all">
+                            <button id="ai-submit" class="px-6 py-3 rounded-xl bg-gradient-to-r from-gemini-start to-gemini-end text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all active:scale-95 flex items-center gap-2">
+                                <span>Transmit</span>
+                                ✨
+                            </button>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Connect Section -->
+        <section id="connect" class="py-24 transition-colors duration-500 relative overflow-hidden">
+            <!-- Decorative gradient line -->
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-20"></div>
+
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h3 class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom text-sm mono-font uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4">// Connect</h3>
+                <h2 class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-100 text-4xl font-bold mb-12 text-glow-subtle transition-all duration-500">Initiate Collaboration</h2>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- Email -->
+                    <a href="mailto:reddyritukanta37@gmail.com" class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-200 group relative inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-neutral-900 rounded-full shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden card-glow">
+                        <div class="absolute inset-0 w-0 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full opacity-10"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        <span class="font-medium text-slate-900 dark:text-white">reddyritukanta37@gmail.com</span>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/ritukanta" target="_blank" rel="noopener noreferrer" class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-300 group relative inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-neutral-900 rounded-full shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden card-glow">
+                         <div class="absolute inset-0 w-0 bg-slate-800 transition-all duration-300 ease-out group-hover:w-full opacity-10 dark:opacity-100 dark:group-hover:bg-white/10"></div>
+                         <svg fill="currentColor" class="h-5 w-5 text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span class="font-medium text-slate-900 dark:text-white">GitHub</span>
+                    </a>
+
+                    <!-- Pexels -->
+                    <a href="https://www.pexels.com/@ritukanta-reddy-1089593/" target="_blank" rel="noopener noreferrer" class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-500 group relative inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-neutral-900 rounded-full shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden card-glow">
+                        <div class="absolute inset-0 w-0 bg-green-600 transition-all duration-300 ease-out group-hover:w-full opacity-10"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-600 dark:text-slate-400 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <span class="font-medium text-slate-900 dark:text-white">Photography</span>
+                    </a>
+                </div>
             </div>
-
-            <!-- Skill Card 4 -->
-            <div
-              class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-500 group p-8 rounded-2xl bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-slate-200 dark:border-neutral-800 card-glow transition-all duration-500 hover:-translate-y-2"
-            >
-              <div
-                class="w-12 h-12 mb-6 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h4 class="text-xl font-bold mb-3">Dev Environment</h4>
-              <p
-                class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"
-              >
-                Proficient in Linux ecosystems, Git version control, and GitHub
-                collaboration workflows.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Connect Section -->
-      <section
-        id="connect"
-        class="py-24 bg-slate-50/50 dark:bg-neutral-950/50 backdrop-blur-sm transition-colors duration-500 relative overflow-hidden"
-      >
-        <!-- Decorative gradient line -->
-        <div
-          class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-20"
-        ></div>
-
-        <div class="max-w-4xl mx-auto px-6 text-center">
-          <h3
-            class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom text-sm mono-font uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4"
-          >
-            // Connect
-          </h3>
-          <h2
-            class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-100 text-4xl font-bold mb-12 text-glow-subtle transition-all duration-500"
-          >
-            Initiate Collaboration
-          </h2>
-
-          <div class="flex flex-wrap justify-center gap-6">
-            <!-- Email -->
-            <a
-              href="mailto:reddyritukanta37@gmail.com"
-              class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-200 group relative inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-neutral-900 rounded-full shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden card-glow"
-            >
-              <div
-                class="absolute inset-0 w-0 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full opacity-10"
-              ></div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              <span class="font-medium text-slate-900 dark:text-white"
-                >reddyritukanta37@gmail.com</span
-              >
-            </a>
-
-            <!-- GitHub -->
-            <a
-              href="https://github.com/ritukanta"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-300 group relative inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-neutral-900 rounded-full shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden card-glow"
-            >
-              <div
-                class="absolute inset-0 w-0 bg-slate-800 transition-all duration-300 ease-out group-hover:w-full opacity-10 dark:opacity-100 dark:group-hover:bg-white/10"
-              ></div>
-              <svg
-                fill="currentColor"
-                class="h-5 w-5 text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                />
-              </svg>
-              <span class="font-medium text-slate-900 dark:text-white"
-                >GitHub</span
-              >
-            </a>
-
-            <!-- Pexels -->
-            <a
-              href="https://www.pexels.com/@ritukanta-reddy-1089593/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="animate-on-scroll opacity-0 translate-y-8 transition-all-custom delay-500 group relative inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-neutral-900 rounded-full shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden card-glow"
-            >
-              <div
-                class="absolute inset-0 w-0 bg-green-600 transition-all duration-300 ease-out group-hover:w-full opacity-10"
-              ></div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-slate-600 dark:text-slate-400 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              <span class="font-medium text-slate-900 dark:text-white"
-                >Photography</span
-              >
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer
-      class="py-12 bg-white/80 dark:bg-pitch/80 backdrop-blur-md border-t border-slate-200 dark:border-neutral-900 text-center transition-colors duration-500 relative z-10"
-    >
-      <div class="max-w-4xl mx-auto px-6 space-y-8">
-        <!-- The Quote -->
-        <blockquote
-          class="mono-font text-sm md:text-base text-slate-500 dark:text-slate-500 italic"
-        >
-          "What's it like to hold the hand of someone you love?
-          <span
-            class="text-blue-500 dark:text-blue-400 not-italic font-semibold"
-            >Interlinked.</span
-          >
-          <span
-            class="text-cyan-500 dark:text-cyan-400 not-italic font-semibold"
-            >Interlinked.</span
-          >"
-        </blockquote>
+    <footer class="py-12 bg-white/80 dark:bg-pitch/80 backdrop-blur-md border-t border-slate-200 dark:border-neutral-900 text-center transition-colors duration-500 relative z-10">
+        <div class="max-w-4xl mx-auto px-6 space-y-8">
+            <!-- The Quote -->
+            <blockquote class="mono-font text-sm md:text-base text-slate-500 dark:text-slate-500 italic">
+                "What's it like to hold the hand of someone you love? <span class="text-blue-500 dark:text-blue-400 not-italic font-semibold">Interlinked.</span> <span class="text-cyan-500 dark:text-cyan-400 not-italic font-semibold">Interlinked.</span>"
+            </blockquote>
 
-        <div class="text-slate-400 dark:text-slate-600 text-sm">
-          © <span id="year"></span> Ritukanta Reddy. All rights reserved.
+            <div class="text-slate-400 dark:text-slate-600 text-sm">
+                © <span id="year"></span> Ritukanta Reddy. All rights reserved.
+            </div>
         </div>
-      </div>
     </footer>
 
     <script>
-      // Dynamic Year
-      document.getElementById("year").textContent = new Date().getFullYear();
+        // Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Theme Toggle Logic
-      const themeToggleBtn = document.getElementById("theme-toggle");
-      const htmlElement = document.documentElement;
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
 
-      // Check for saved theme preference, otherwise use system preference
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        htmlElement.classList.add("dark");
-      } else {
-        htmlElement.classList.remove("dark");
-      }
-
-      themeToggleBtn.addEventListener("click", () => {
-        htmlElement.classList.toggle("dark");
-        if (htmlElement.classList.contains("dark")) {
-          localStorage.theme = "dark";
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
         } else {
-          localStorage.theme = "light";
+            htmlElement.classList.remove('dark');
         }
-      });
 
-      // Smooth scroll for anchors
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
         });
-      });
 
-      // Animation Observer
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove("opacity-0", "translate-y-8");
-            observer.unobserve(entry.target); // animate only once
-          }
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-      }, observerOptions);
 
-      // Target elements for animation
-      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
-        observer.observe(el);
-      });
-
-      // Immediate animation for hero elements on load
-      window.addEventListener("load", () => {
-        document.querySelectorAll(".animate-on-load").forEach((el) => {
-          el.classList.remove("opacity-0", "translate-y-8");
+        // Animation Observer
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+        window.addEventListener('load', () => {
+             document.querySelectorAll('.animate-on-load').forEach((el) => el.classList.remove('opacity-0', 'translate-y-8'));
         });
-      });
+
+
+        /* --------------------------------------------------
+           GEMINI AI INTEGRATION - DIGITAL TWIN
+        -------------------------------------------------- */
+        const aiInput = document.getElementById('ai-input');
+        const aiSubmit = document.getElementById('ai-submit');
+        const aiOutput = document.getElementById('ai-output');
+        const aiLoading = document.getElementById('ai-loading');
+
+        // System Prompt defining Ritukanta's persona
+        const systemPrompt = `You are the digital persona of Ritukanta Reddy. You are an introverted but highly capable Digital Architect. 
+        Your skills are: Web architecture (HTML/CSS/JS), AI/ML (Python), Math typesetting (LaTeX), and Linux/Git. 
+        You hold a B.Sc. in Mathematics from Berhampur University. 
+        You prefer deep work over small talk. 
+        Answer questions about your professional background precisely and concisely based ONLY on this information. 
+        If asked about something you don't know or is personal, politely state that it's outside your current dataset. 
+        Maintain a calm, slightly robotic but polite tone, fitting the 'Interlinked' theme. Start answers with "> " to mimic a terminal.`;
+
+        async function callGemini(prompt) {
+            const apiKey = ""; // Left blank, auto-filled by environment if available
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+                return data.candidates[0].content.parts[0].text;
+            } catch (error) {
+                console.error("AI Error:", error);
+                return "> Error: Neural link disrupted. Please try again later.";
+            }
+        }
+
+        async function handleQuery() {
+            const query = aiInput.value.trim();
+            if (!query) return;
+
+            // UI State: Loading
+            aiInput.disabled = true;
+            aiSubmit.disabled = true;
+            aiLoading.classList.remove('hidden');
+            aiOutput.textContent += `\n> User: ${query}\n`; // Echo user query
+            aiInput.value = '';
+
+            // API Call
+            const response = await callGemini(query);
+
+            // UI State: Result
+            aiOutput.textContent += `${response}\n`;
+            aiLoading.classList.add('hidden');
+            aiInput.disabled = false;
+            aiSubmit.disabled = false;
+            
+            // Auto-scroll to bottom of terminal
+            aiOutput.scrollTop = aiOutput.scrollHeight;
+        }
+
+        aiSubmit.addEventListener('click', handleQuery);
+        aiInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleQuery();
+        });
+
     </script>
-  </body>
+</body>
 </html>
